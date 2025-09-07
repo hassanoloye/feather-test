@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   test:
@@ -37,6 +37,6 @@ jobs:
           node-version: 18.x
       - run: npm i -g pnpm
       - run: pnpm i
-      - run: pnpx semantic-release --branches main
+      - run: pnpx semantic-release --branches master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
